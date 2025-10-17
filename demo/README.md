@@ -76,9 +76,9 @@ The hero banner frames the sandbox and explains what you can do. A sticky
 configuration panel on the left keeps the dropdowns, dashboard description, and
 "reading guide" anchored while the right column focuses on the widgets. The
 cards share consistent spacing, typography, and annotations so the interface
-reads like a tidy, comprehensible dashboard template. For a single-source
-handover that captures MVP goals, architecture, testing expectations, and PR
-talking points, review [`docs/dashboard_mvp_handover.md`](../docs/dashboard_mvp_handover.md).
+reads like a tidy, comprehensible dashboard template. When you are getting
+ready to ship changes, consult `docs/final_pr_summary.md` alongside the
+checklist so your pull request narrative covers the major experience pillars.
 
 Feel free to remix the data or use this as a starting point for prototyping a
 new dashboard idea.

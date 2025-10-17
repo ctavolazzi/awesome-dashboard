@@ -26,9 +26,11 @@ Chart.js cannot be loaded—for example, while travelling without network
 access—the widgets gracefully downgrade to inline tables and lists so the data
 remains visible. Run `npm test` to execute the automated smoke checks that
 validate the default dashboard selection, summary metrics, CSV export, and
-dataset structures. For an end-to-end overview of the MVP goals, architecture,
-evaluation checklist, and future recommendations, consult the consolidated
-handover document at [`docs/dashboard_mvp_handover.md`](docs/dashboard_mvp_handover.md).
+dataset structures. When you're preparing a pull request, the
+[`docs/final_pr_checklist.md`](docs/final_pr_checklist.md) guide walks through
+the steps to confirm everything is ready for review, and
+[`docs/final_pr_summary.md`](docs/final_pr_summary.md) highlights the key
+talking points to include in your description.
 
 ## General
 

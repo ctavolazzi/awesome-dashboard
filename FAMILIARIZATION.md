@@ -7,7 +7,10 @@ This repository now includes two major areas:
 - `README.md` – the original curated list of dashboard and visualization resources with contribution guidelines.
 - `demo/` – a static visualization sandbox featuring multiple dashboard perspectives (revenue, marketing, product health) that reuse shared datasets, Chart.js widgets, and accessible layout patterns.
 
-All handoff details, MVP goals, testing guidance, and roadmap notes now live in a single reference: [`docs/dashboard_mvp_handover.md`](docs/dashboard_mvp_handover.md). Treat that document as the canonical source of truth for the sandbox experience.
+Supplementary documentation lives in `demo/README.md` (sandbox instructions),
+`docs/mvp_plan.md` (MVP vision and roadmap), `docs/final_pr_checklist.md`
+(release readiness steps), and `docs/final_pr_summary.md` (key talking points
+for the wrap-up pull request).
 
 ## Key Takeaways
 
@@ -27,10 +30,28 @@ All handoff details, MVP goals, testing guidance, and roadmap notes now live in 
 3. When contributing to the awesome list, continue following the established bullet format (`- [Resource](URL) - Description.`) and end descriptions with a period.
 4. For sandbox enhancements, favor additional modules or utilities over monolithic scripts to keep the code approachable for future maintainers.
 
-For deeper context—including UX highlights, evaluation checklist, and future recommendations—jump to the consolidated handover document mentioned above.
-
 ## Project Status Checklist
 
 - [x] Repository structure documented.
 - [x] Demo sandbox behavior and tooling captured.
 - [x] Automated smoke tests available via `npm test`.
+This repository currently contains a single resource file (`README.md`) that curates a list of dashboard and visualization tools, organized into several categories (General, Graphite, Ganglia, InfluxDB, Sensu, and Others).
+
+## Key Takeaways
+
+- The project functions as an "awesome list" – a curated set of links with short descriptions, rather than executable code.
+- Contributions are expected to follow the contribution guidelines at the bottom of `README.md`.
+- No build tooling, dependencies, or runtime code are present in the repository at this time.
+
+## Suggested Next Steps for New Contributors
+
+1. Review the existing entries in each category before proposing additions to avoid duplicates.
+2. When adding new resources, ensure the format `- [Resource Name](URL) - Description.` is respected and that descriptions end with a period.
+3. Consider expanding underrepresented sections (e.g., Ganglia or Sensu) with high-quality resources if available.
+4. If the list grows substantially, evaluate whether additional categories or subcategories would improve discoverability.
+
+## Project Status Checklist
+
+- [x] Repository cloned and inspected.
+- [x] Verified that no automated tooling or dependencies need installation.
+- [x] Documented repository structure and contribution guidelines.
