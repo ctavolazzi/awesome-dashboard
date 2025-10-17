@@ -8,8 +8,29 @@ A curated list of amazingly awesome dashboards/visualization resources.
   * [Ganglia](#ganglia)
   * [InfluxDB](#influxdb)
   * [Others](#others)
+* [Demo](#demo)
 
 See [Contribution Guidelines](#contribution-guidelines)
+
+## Demo
+
+Looking for a quick way to visualise a dashboard? The [`demo/`](demo/README.md)
+folder contains a small static project with multiple dashboard modes powered by
+shared quarterly datasets. Serve it locally with `npm run dev` (or
+`python -m http.server --directory demo`) to explore the sample dashboards and
+switch between revenue, marketing, and product health views. The refined
+experience now includes a sticky configuration panel, explanatory guidance,
+modular JavaScript files (`data.js`, `charts.js`, and `app.js`), a CSV export,
+and an accessibility-first layout with skip link and visible focus states. When
+Chart.js cannot be loaded—for example, while travelling without network
+access—the widgets gracefully downgrade to inline tables and lists so the data
+remains visible. Run `npm test` to execute the automated smoke checks that
+validate the default dashboard selection, summary metrics, CSV export, and
+dataset structures. When you're preparing a pull request, the
+[`docs/final_pr_checklist.md`](docs/final_pr_checklist.md) guide walks through
+the steps to confirm everything is ready for review, and
+[`docs/final_pr_summary.md`](docs/final_pr_summary.md) highlights the key
+talking points to include in your description.
 
 ## General
 

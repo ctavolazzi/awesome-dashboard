@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Awesome Dashboard Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"
+      integrity="sha256-/BnByxZZnW4l3lbR0IrBRcRcWKI3DrMxAQJ3988ChfE="
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-test="skip-link">Skip to dashboard content</a>
+    <noscript class="noscript">
+      JavaScript powers the dashboard switcher, chart updates, and CSV export.
+      Enable scripts to experience the full interactive sandbox.
+    </noscript>
+    <header class="hero">
+      <div class="container hero__inner">
+        <div>
+          <p class="hero__eyebrow">Visualization Sandbox</p>
+          <h1 class="hero__title" data-test="hero-title">Awesome Dashboard Demo</h1>
+          <p class="hero__subtitle">
+            Explore how one source of truth can drive the perspectives revenue,
+            marketing, and product teams need to make confident decisions.
+          </p>
+        </div>
+        <div class="hero__cta">
+          <p class="hero__cta-label">What you can do here</p>
+          <ul>
+            <li>Compare three dashboard templates without rewriting widgets.</li>
+            <li>Switch quarters to stress-test trends and seasonal shifts.</li>
+            <li>Borrow layout and styling ideas for your own prototypes.</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main id="main">
+      <div class="container layout">
+        <aside class="panel controls-panel" aria-label="Dashboard configuration">
+          <div class="panel__header">
+            <h2>Choose a dashboard lens</h2>
+            <p>
+              Pick a focus area and time period to see how every widget adapts to
+              the same canonical dataset.
+            </p>
+          </div>
+          <div class="controls">
+            <div class="control">
+              <label for="dashboard">Dashboard</label>
+              <select
+                id="dashboard"
+                aria-label="Select dashboard view"
+                data-test="dashboard-select"
+              ></select>
+            </div>
+            <div class="control">
+              <label for="quarter">Quarter</label>
+              <select
+                id="quarter"
+                aria-label="Select quarter"
+                data-test="quarter-select"
+              ></select>
+            </div>
+          </div>
+          <div class="dashboard-meta" aria-live="polite">
+            <span
+              id="dashboardBadge"
+              class="badge"
+              data-test="dashboard-badge"
+            >
+              Revenue Performance
+            </span>
+            <p
+              id="dashboardDescription"
+              class="dashboard-description"
+              data-test="dashboard-description"
+            >
+              Track bookings against plan and highlight the go-to-market channels
+              that fuel quarterly growth.
+            </p>
+          </div>
+          <div class="primer">
+            <h3>Reading the view</h3>
+            <ul>
+              <li>
+                <strong>Bar &amp; line charts</strong> track actuals against the
+                same target to surface gaps quickly.
+              </li>
+              <li>
+                <strong>The doughnut</strong> keeps channel mix honest—hover to
+                see percentages.
+              </li>
+              <li>
+                <strong>The summary table</strong> is ideal for executive
+                highlights or weekly standups.
+              </li>
+            </ul>
+          </div>
+        </aside>
+        <section class="content">
+          <div class="grid" aria-live="polite">
+            <article class="card">
+              <div class="card__header">
+                <h2 id="barTitle">Revenue vs Target</h2>
+                <p class="card__hint">Actuals vs. plan by month</p>
+              </div>
+              <canvas
+                id="barChart"
+                role="img"
+                aria-label="Bar chart comparing revenue and targets"
+              ></canvas>
+            </article>
+            <article class="card">
+              <div class="card__header">
+                <h2 id="lineTitle">Revenue Trend</h2>
+                <p class="card__hint">Trendline with confidence fill</p>
+              </div>
+              <canvas
+                id="lineChart"
+                role="img"
+                aria-label="Line chart showing quarterly revenue trend"
+              ></canvas>
+            </article>
+            <article class="card card--split">
+              <div class="card__header">
+                <h2 id="doughnutTitle">Channel Breakdown</h2>
+                <p class="card__hint">Hover for contribution share</p>
+              </div>
+              <div class="card__body card__body--split">
+                <canvas
+                  id="doughnutChart"
+                  role="img"
+                  aria-label="Doughnut chart showing revenue share by channel"
+                ></canvas>
+                <div class="note">
+                  <h3>Why it matters</h3>
+                  <p>
+                    The mix quickly reveals whether your growth is balanced or
+                    concentrated in one channel so you can plan mitigation steps.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card__header">
+                <h2 id="summaryTitle">Quarterly Summary</h2>
+                <p class="card__hint">Share this in your next update</p>
+              </div>
+              <table aria-label="Quarterly KPI summary">
+                <thead>
+                  <tr>
+                    <th scope="col">Metric</th>
+                    <th scope="col">Value</th>
+                  </tr>
+                </thead>
+                <tbody id="summaryTable" data-test="summary-table"></tbody>
+              </table>
+            </article>
+            <article class="card">
+              <div class="card__header">
+                <h2 id="insightsTitle">Highlights &amp; Next Steps</h2>
+                <p class="card__hint">Context that travels with the data</p>
+              </div>
+              <div class="card__body">
+                <ul
+                  id="insightsList"
+                  class="insights"
+                  aria-live="polite"
+                  data-test="insights-list"
+                ></ul>
+                <button
+                  id="downloadCsv"
+                  class="button"
+                  type="button"
+                  data-test="download-button"
+                >
+                  Download this view as CSV
+                </button>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <p>
+        Built for exploring the
+        <a href="https://github.com/microsoft/awesome-dashboard">awesome-dashboard</a>
+        collection.
+      </p>
+    </footer>
+  </body>
+</html>
